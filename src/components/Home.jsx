@@ -2,7 +2,7 @@ import viteLogo from '/vite.svg'
 import { useState, useEffect } from 'react'
 import liff from '@line/liff'
 
-function About() {
+function Home() {
 
   const [pictureUrl, setPictureUrl] = useState(viteLogo);
   const [idToken, setIdToken] = useState("");
@@ -60,5 +60,5 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
 
