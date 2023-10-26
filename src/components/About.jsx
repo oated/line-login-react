@@ -18,9 +18,9 @@ function About() {
   const initLine = () => {
     liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
       if (liff.isLoggedIn()) {
-        runApp();
+        runApp({ redirectUri: "https://line-login-react.vercel.app/about"});
       } else {
-        liff.login();
+        liff.login({ redirectUri: "https://line-login-react.vercel.app/about"});
       }
     }, err => console.error(err));
   }
@@ -45,7 +45,7 @@ function About() {
     <div className="App">
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
-        <h1>React with LINE Login test bot1</h1>
+        <h1>About Page</h1>
         <hr/>
         <img src={pictureUrl} width="300px" height="300px"/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>id token: </b> {idToken}</p>
