@@ -1,6 +1,7 @@
 import viteLogo from '/vite.svg'
 import { useState, useEffect } from 'react'
 import liff from '@line/liff'
+import { useParams } from 'react-router-dom';
 
 function About() {
 
@@ -9,6 +10,7 @@ function About() {
   const [displayName, setDisplayName] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
   const [userId, setUserId] = useState("");
+  const {id} = useParams("1")
 
   const logout = () => {
     liff.logout();
@@ -18,9 +20,10 @@ function About() {
   const initLine = () => {
     liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
       if (liff.isLoggedIn()) {
-        runApp({ redirectUri: "https://line-login-react.vercel.app/about"});
+        
+        runApp({ redirectUri: `https://line-login-react.vercel.app/${id}`});
       } else {
-        liff.login({ redirectUri: "https://line-login-react.vercel.app/about"});
+        liff.login({ redirectUri: `https://line-login-react.vercel.app/${id}`});
       }
     }, err => console.error(err));
   }
@@ -45,7 +48,7 @@ function About() {
     <div className="App">
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
-        <h1>About Page</h1>
+        <h1>About Page {id}</h1>
         <hr/>
         <img src={pictureUrl} width="300px" height="300px"/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>id token: </b> {idToken}</p>
