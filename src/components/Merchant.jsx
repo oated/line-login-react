@@ -5,13 +5,11 @@ import liff from '@line/liff'
 
 function Merchant() {
 
-    const queryParams = new URLSearchParams(window.location.search)
-    const merchantId = queryParams.get("id")
-    const merchantName = queryParams.get("name")
+    const queryParams = new URLSearchParams(window.location.search);
+    const merchantId = queryParams.get("id");
+    const merchantName = queryParams.get("name");
     const [pictureUrl, setPictureUrl] = useState(viteLogo);
-    const [idToken, setIdToken] = useState("");
     const [displayName, setDisplayName] = useState("");
-    const [statusMessage, setStatusMessage] = useState("");
     const [userId, setUserId] = useState("");
     const destinationUrl = window.location.href;
   
@@ -41,6 +39,30 @@ function Merchant() {
         setUserId(profile.userId);
       }).catch(err => console.error(err));
     }
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ market_id: `${merchantId}`,  line_token: `${userId}` })
+    };
+    fetch('http://188.166.177.184:3001/bot/add_token_user', requestOptions)
+        .then(async response => {
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            const data = isJson && await response.json();
+
+            // check for error response
+            if (!response.ok) {
+                // get error message from body or default to response status
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
+            }
+
+            this.setState({ postId: data.id })
+        })
+        .catch(error => {
+            this.setState({ errorMessage: error.toString() });
+            console.error('There was an error!', error);
+        });
   
     useEffect(() => {
       initLine();
@@ -55,6 +77,7 @@ function Merchant() {
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 
+        <button onClick={() => requestOptions()} style={{ width: "100%", height: 30 }}>รับคิว</button>
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
       </header>
