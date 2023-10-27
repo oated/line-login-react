@@ -44,13 +44,14 @@ function Merchant() {
 
     const handleClick = (e) => {
         e.preventDefult();
+        const detail = {userId, merchantId};
 
         fetch('http://188.166.177.184:3001/bot/add_token_user', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ market_id: {merchantId},  line_token: {userId} })
         }).then(() => {
-            console.log(body);
+            console.log(detail);
         })
     }
 
