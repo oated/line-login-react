@@ -22,9 +22,10 @@ function Merchant() {
     const initLine = () => {
       liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
         if (liff.isLoggedIn()) {
-          runApp();
+          const destinationUrl = window.location.href;
+          runApp({ redirectUri: destinationUrl });
         } else {
-          liff.login({ redirectUri: merchantId });
+          liff.login({ redirectUri: destinationUrl });
         }
       }, err => console.error(err));
     }
