@@ -45,7 +45,7 @@ function Merchant() {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ market_id: `${merchantId}`,  line_token: `${userId}` })
+        body: JSON.stringify({ market_id: {merchantId},  line_token: {userId} })
     };
     fetch('http://188.166.177.184:3001/bot/add_token_user', requestOptions)
         .then(async response => {
