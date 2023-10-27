@@ -13,6 +13,7 @@ function Merchant() {
     const [displayName, setDisplayName] = useState("");
     const [statusMessage, setStatusMessage] = useState("");
     const [userId, setUserId] = useState("");
+    const destinationUrl = window.location.href;
   
     const logout = () => {
       liff.logout();
@@ -22,7 +23,6 @@ function Merchant() {
     const initLine = () => {
       liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
         if (liff.isLoggedIn()) {
-          const destinationUrl = window.location.href;
           runApp({ redirectUri: destinationUrl });
         } else {
           liff.login({ redirectUri: destinationUrl });
