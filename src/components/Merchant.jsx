@@ -52,7 +52,7 @@ function Merchant() {
         <div><h3>Merchant ID : {merchantId}</h3></div>
         <div><h3>Merchant Name : {merchantName}</h3></div>
         <hr/>
-        <img src={pictureUrl} width="300px" height="300px"/>
+        <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "30px"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 
