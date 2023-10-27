@@ -6,8 +6,8 @@ import liff from '@line/liff'
 function Merchant() {
 
     const queryParams = new URLSearchParams(window.location.search)
-    const merchantId = queryParams.get("merchantId")
-    const merchantName = queryParams.get("merchantName")
+    const merchantId = queryParams.get("id")
+    const merchantName = queryParams.get("name")
     const [pictureUrl, setPictureUrl] = useState(viteLogo);
     const [idToken, setIdToken] = useState("");
     const [displayName, setDisplayName] = useState("");
@@ -49,7 +49,7 @@ function Merchant() {
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
         <div><h3>Merchant ID : {merchantId}</h3></div>
-        <div><h3>Merchant ID : {merchantName}</h3></div>
+        <div><h3>Merchant Name : {merchantName}</h3></div>
         <hr/>
         <img src={pictureUrl} width="300px" height="300px"/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>id token: </b> {idToken}</p>
