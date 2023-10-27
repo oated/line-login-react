@@ -42,17 +42,9 @@ function Merchant() {
       }).catch(err => console.error(err));
     }
 
-    const handleClick = (e) => {
-        e.preventDefult();
-        const detail = {userId, merchantId};
 
-        fetch('http://188.166.177.184:3001/bot/add_token_user', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-        }).then(() => {
-            console.log(detail);
-        })
-    }
+        const detail = {userId, merchantId};
+        console.log(detail);
 
     // const requestOptions = {
     //     method: 'POST',
