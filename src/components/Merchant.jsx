@@ -83,7 +83,6 @@ function Merchant() {
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 
-        <button onClick={handleClick} style={{ width: "100%", height: 30 }}>รับคิว</button>
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
       </header>
