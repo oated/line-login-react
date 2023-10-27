@@ -8,8 +8,10 @@ function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
     const merchantId = queryParams.get("id");
     const merchantName = queryParams.get("name");
+    const [idToken, setIdToken] = useState("");
     const [pictureUrl, setPictureUrl] = useState(viteLogo);
     const [displayName, setDisplayName] = useState("");
+    const [statusMessage, setStatusMessage] = useState("");
     const [userId, setUserId] = useState("");
     const destinationUrl = window.location.href;
   
@@ -77,7 +79,7 @@ function Merchant() {
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 
-        <button onClick={() => requestOptions()} style={{ width: "100%", height: 30 }}>รับคิว</button>
+        <button onClick={requestOptions} style={{ width: "100%", height: 30 }}>รับคิว</button>
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
       </header>
