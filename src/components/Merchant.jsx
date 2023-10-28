@@ -51,7 +51,6 @@ function Merchant() {
         axios.post('http://188.166.177.184:3001/bot/add_token_user', data, {
             headers: {
                 'Content-Type': 'application/json',
-                'Cookie': 'connect.sid=s%3A97EGMK4BdrzqZwYDuOXrKTx-s6WWmklS.FHUkAIB257jH7stTEsn2VcuUMxVsCYmzV%2BdZxSJUHes',
             }
         })
             .then(response => {
