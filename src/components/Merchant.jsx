@@ -47,11 +47,30 @@ function Merchant() {
     // console.log(detail);
 
     
+    // const axios = require('axios');
+    // let data = JSON.stringify({"market_id": "2", "line_token": "Uc759a2130a40ccadf3ec1798dfab2207"});
+
+    // let config = {
+    // method: 'post',
+    // maxBodyLength: Infinity,
+    // url: 'http://188.166.177.184:3001/bot/add_token_user',
+    // headers: { 'Content-Type': 'application/json', 'Cookie': 'connect.sid=s%3A97EGMK4BdrzqZwYDuOXrKTx-s6WWmklS.FHUkAIB257jH7stTEsn2VcuUMxVsCYmzV%2BdZxSJUHes'},
+    // data : data
+    // };
+
+    // axios.request(config)
+    // .then((response) => {
+    // console.log(JSON.stringify(response.data));
+    // })
+    // .catch((error) => {
+    //     console.log(error);
+    // });
+
 
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ market_id: merchantId,  line_token: userId })
+        data: JSON.stringify({ market_id: merchantId,  line_token: userId })
     };
     fetch('http://188.166.177.184:3001/bot/add_token_user', requestOptions)
         .then(async response => {
