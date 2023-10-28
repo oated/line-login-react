@@ -43,7 +43,7 @@ function Merchant() {
     }
 
 
-    const detail = JSON.stringify( {userId} );
+    const detail = JSON.stringify({ market_id: {merchantId},  line_token: {userId} })
     console.log(detail);
 
     
