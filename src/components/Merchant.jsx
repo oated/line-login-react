@@ -43,34 +43,34 @@ function Merchant() {
     }
 
 
-    const detail = JSON.stringify({ market_id: merchantId,  line_token: userId })
-    console.log(detail);
+    // const detail = JSON.stringify({ market_id: merchantId,  line_token: userId })
+    // console.log(detail);
 
     
 
-    // const requestOptions = {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ market_id: {merchantId},  line_token: {userId} })
-    // };
-    // fetch('http://188.166.177.184:3001/bot/add_token_user', requestOptions)
-    //     .then(async response => {
-    //         const isJson = response.headers.get('content-type')?.includes('application/json');
-    //         const data = isJson && await response.json();
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ market_id: merchantId,  line_token: userId })
+    };
+    fetch('http://188.166.177.184:3001/bot/add_token_user', requestOptions)
+        .then(async response => {
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            const data = isJson && await response.json();
 
-    //         // check for error response
-    //         if (!response.ok) {
-    //             // get error message from body or default to response status
-    //             const error = (data && data.message) || response.status;
-    //             return Promise.reject(error);
-    //         }
+            // check for error response
+            if (!response.ok) {
+                // get error message from body or default to response status
+                const error = (data && data.message) || response.status;
+                return Promise.reject(error);
+            }
 
-    //         this.setState({ postId: data.id })
-    //     })
-    //     .catch(error => {
-    //         this.setState({ errorMessage: error.toString() });
-    //         console.error('There was an error!', error);
-    //     });
+            this.setState({ postId: data.id })
+        })
+        .catch(error => {
+            this.setState({ errorMessage: error.toString() });
+            console.error('There was an error!', error);
+        });
   
     useEffect(() => {
       initLine();
@@ -84,7 +84,7 @@ function Merchant() {
         <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "100rem"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
-
+        <button onClick={requestOptions} style={{ width: "100%", height: 30 }}>Queue</button>
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
       </header>
