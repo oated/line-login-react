@@ -6,13 +6,13 @@ import liff from '@line/liff'
 function Merchant() {
 
     const queryParams = new URLSearchParams(window.location.search);
-    const merchantId = queryParams.get("id");
+    const market_id = queryParams.get("id");
     const merchantName = queryParams.get("name");
     const [idToken, setIdToken] = useState("");
     const [pictureUrl, setPictureUrl] = useState(viteLogo);
     const [displayName, setDisplayName] = useState("");
     const [statusMessage, setStatusMessage] = useState("");
-    const [userId, setUserId] = useState("");
+    const [line_token, setLine_token] = useState("");
     const destinationUrl = window.location.href;
   
     const logout = () => {
@@ -38,12 +38,12 @@ function Merchant() {
         setDisplayName(profile.displayName);
         setPictureUrl(profile.pictureUrl);
         setStatusMessage(profile.statusMessage);
-        setUserId(profile.userId);
+        setLine_token(profile.line_token);
       }).catch(err => console.error(err));
     }
 
 
-    const detail = JSON.stringify({ market_id: {merchantId},  line_token: {userId} });
+    const detail = JSON.stringify({market_id}, {userId});
     console.log(detail);
 
     
@@ -79,11 +79,11 @@ function Merchant() {
     <div className="App">
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
-        <div><h3>Merchant ID : {merchantId}</h3></div>
+        <div><h3>Merchant ID : {marketId}</h3></div>
         <div><h3>Merchant Name : {merchantName}</h3></div>
         <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "100rem"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
-        <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
+        <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {line_token}</p>
 
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
