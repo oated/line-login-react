@@ -12,7 +12,7 @@ function Merchant() {
     const [pictureUrl, setPictureUrl] = useState(viteLogo);
     const [displayName, setDisplayName] = useState("");
     const [statusMessage, setStatusMessage] = useState("");
-    const [line_token, setLine_token] = useState("");
+    const [userId, setUserId] = useState("");
     const destinationUrl = window.location.href;
   
     const logout = () => {
@@ -38,7 +38,7 @@ function Merchant() {
         setDisplayName(profile.displayName);
         setPictureUrl(profile.pictureUrl);
         setStatusMessage(profile.statusMessage);
-        setLine_token(profile.line_token);
+        setUserId(profile.userId);
       }).catch(err => console.error(err));
     }
 
@@ -83,7 +83,7 @@ function Merchant() {
         <div><h3>Merchant Name : {merchantName}</h3></div>
         <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "100rem"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
-        <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {line_token}</p>
+        <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
