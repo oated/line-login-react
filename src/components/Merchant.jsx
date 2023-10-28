@@ -77,9 +77,9 @@ function Merchant() {
                     <img src={pictureUrl} width="300px" height="300px" style={{ borderRadius: "100rem" }} alt="Merchant Image" />
                     <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
                     <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
-                    <button onClick={sendRequestToAPI} style={{ width: "100%", height: 30 }}>Queue</button>
+                    <button onClick={sendRequestToAPI} style={{ width: "100%", height: "auto", backgroundColor: "#000000", color: "#ffffff" }}>Add Queue</button>
                     <br />
-                    <button onClick={logout} style={{ width: "100%", height: 30 }}>Logout</button>
+                    <button onClick={logout} style={{ width: "100%", height: "auto", backgroundColor: "#000000", color: "#ffffff" }}>Logout</button>
                     <p>{response}</p>
                 </div>
             </header>
