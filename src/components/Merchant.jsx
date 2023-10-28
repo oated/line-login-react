@@ -79,7 +79,7 @@ function Merchant() {
     <div className="App">
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
-        <div><h3>Merchant ID : {marketId}</h3></div>
+        <div><h3>Merchant ID : {market_id}</h3></div>
         <div><h3>Merchant Name : {merchantName}</h3></div>
         <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "100rem"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
