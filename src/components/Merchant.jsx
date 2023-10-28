@@ -59,6 +59,7 @@ function Merchant() {
                 console.log(data);
             })
             .catch(error => {
+                console.log(data);
                 console.error(error);
             });
     }
