@@ -43,7 +43,7 @@ function Merchant() {
     }
 
 
-    const detail = JSON.stringify( {merchantId}, {userId} );
+    const detail = JSON.stringify( {userId} );
     console.log(detail);
 
     
