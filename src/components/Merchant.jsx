@@ -48,7 +48,7 @@ function Merchant() {
     // console.log(detail);
 
     
-    sendRequestToAPI = () => {
+    const sendRequestToAPI = () => {
         const data = JSON.stringify({ market_id: merchantId,  line_token: userId });
     
         axios.post('http://188.166.177.184:3001/bot/add_token_user', data, {
@@ -101,7 +101,7 @@ function Merchant() {
         <img src={pictureUrl} width="300px" height="300px" style={{borderRadius: "100rem"}}/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
-        <button onClick={this.sendRequestToAPI} style={{ width: "100%", height: 30 }}>Queue</button>
+        <button onClick={sendRequestToAPI} style={{ width: "100%", height: 30 }}>Queue</button>
         <br />
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
