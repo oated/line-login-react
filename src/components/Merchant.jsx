@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import liff from '@line/liff';
-import viteLogo from './vite.svg';
+import viteLogo from '/vite.svg';
 
 function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
