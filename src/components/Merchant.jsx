@@ -65,7 +65,7 @@ function Merchant() {
                 return Promise.reject(error);
             }
 
-            this.setState({ postId: data.id })
+            this.setState({ market_id: merchantId,  line_token: userId })
         })
         .catch(error => {
             this.setState({ errorMessage: error.toString() });
@@ -85,6 +85,7 @@ function Merchant() {
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
         <button onClick={requestOptions} style={{ width: "100%", height: 30 }}>Queue</button>
+        <br />
         <button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
       </div>
       </header>
