@@ -44,8 +44,8 @@ function Merchant() {
 
     const sendRequestToAPI = () => {
         const data = JSON.stringify({
-            "market_id": "2",
-            "line_token": "Uc759a2130a40ccadf3ec1798dfab2207"
+            "market_id": merchantId,
+            "line_token": userId
           });
 
         axios.post('http://188.166.177.184:3001/bot/add_token_user', data, {
