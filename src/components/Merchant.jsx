@@ -76,16 +76,20 @@ function Merchant() {
                     <div className="logo-pro">
                         <img src={tunqlogo} alt="TunQ Logo"/>
                     </div>
-                    <div className="cus-profile">
+                    <div className="cus-pro">
                     <img src={pictureUrl} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
                     </div>
                 </div>
-                <div style={{ textAlign: "center" }}>
-                    <div><h2>ร้าน {merchantName}</h2></div>
-                    
-                    <button onClick={sendRequestToAPI} style={{ width: "100%", height: "auto", backgroundColor: "#000000", color: "#ffffff" }}>Add Queue</button>
+                <div className='box-action'>
+                    <div className='merchant-name'><h2>ร้าน {merchantName}</h2></div>
+                    <div className="date-time">
+                        <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
+                    </div>
+                    <div className="ellipse">
+                        <span className='take-queue' onClick={sendRequestToAPI}>กดรับคิว</span>
+                    </div>
                     <br />
-                    <button onClick={logout} style={{ width: "100%", height: "auto", backgroundColor: "#000000", color: "#ffffff" }}>Logout</button>
+                    <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
                     <p>{response}</p>
                 </div>
             </header>
