@@ -1,17 +1,18 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+body{
+  background-color: #F1F8F8;
+}
+.nav{
+ max-width: 1200px;
+ margin: auto;
+ padding: 2rem 1rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 2rem;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.logo-pro img{
+  max-width: 110px;
 }
 
 a {
