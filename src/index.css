@@ -74,12 +74,11 @@ body{
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  vertical-align: middle;
-  display: block;
-  text-align: center;
   cursor: pointer;
   height: 100%;
-  margin-top: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logout-btn{
