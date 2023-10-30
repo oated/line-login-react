@@ -86,7 +86,7 @@ function Merchant() {
                         <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
                     </div>
                     <div className="ellipse">
-                        <span className='take-queue' onClick={sendRequestToAPI}>กดรับคิว</span>
+                        <span className='take-queue' onClick={sendRequestToAPI}>รับคิว</span>
                     </div>
                     <br />
                     <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
