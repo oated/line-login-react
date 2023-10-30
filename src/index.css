@@ -17,7 +17,7 @@ body{
 .nav{
  max-width: 500px;
  margin: auto;
- padding: 2rem 0rem 1rem;
+ padding: 2rem 1rem 0rem 1rem;
  display: flex;
  align-items: center;
  justify-content: space-between;
@@ -40,6 +40,9 @@ body{
   background-color: #ffffff;
   border-radius: 0px 0px 5px 5px;
   padding: 1rem 1.5rem;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
 }
 
 ul.menu-list li{

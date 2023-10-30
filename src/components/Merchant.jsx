@@ -70,9 +70,9 @@ function Merchant() {
             });
     }
 
-    useEffect(() => {
-        initLine();
-    }, []);
+    // useEffect(() => {
+    //     initLine();
+    // }, []);
 
     return (
         <div className="merchant">
