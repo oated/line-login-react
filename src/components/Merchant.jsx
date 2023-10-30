@@ -81,7 +81,7 @@ function Merchant() {
                     </div>
                 </div>
                 <div style={{ textAlign: "center" }}>
-                    <div><h2>{merchantName}</h2></div>
+                    <div><h2>ร้าน {merchantName}</h2></div>
                     
                     <button onClick={sendRequestToAPI} style={{ width: "100%", height: "auto", backgroundColor: "#000000", color: "#ffffff" }}>Add Queue</button>
                     <br />
