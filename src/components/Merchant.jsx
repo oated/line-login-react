@@ -81,7 +81,7 @@ function Merchant() {
                     </div>
                 </div>
                 <div className='box-action'>
-                    <div className='merchant-name'><h2>ร้าน {merchantName}</h2></div>
+                    <div className='merchant-name'><h2>{merchantName}</h2></div>
                     <div className="date-time">
                         <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
                     </div>
