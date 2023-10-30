@@ -3,6 +3,7 @@ import axios from 'axios';
 import liff from '@line/liff';
 import viteLogo from '/vite.svg';
 import profilepic from '/profile-pic.png';
+import tunqlogo from '/TunQ-logo.png'
 
 function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
@@ -73,7 +74,7 @@ function Merchant() {
             <header className="header">
                 <div className="nav">
                     <div className="logo-pro">
-                        <img src="src/assets/TunQ-logo.png" alt="" srcset="" />
+                        <img src={tunqlogo} alt="TunQ Logo"/>
                     </div>
                     <div className="cus-profile">
                     <img src={pictureUrl} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
