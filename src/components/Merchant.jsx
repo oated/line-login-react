@@ -108,7 +108,9 @@ function Merchant() {
                     <div className="date-time">
                         <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
                     </div>
+                    
                     <div className="ellipse">
+                        <span className='heartbeat'></span>
                         <span className='take-queue' onClick={sendRequestToAPI}>รับคิว</span>
                     </div>
                     <br />
