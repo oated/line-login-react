@@ -8,10 +8,16 @@
 body{
   background-color: #F1F8F8;
 }
+.merchant{
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+
 .nav{
  max-width: 500px;
  margin: auto;
- padding: 2rem 1rem;
+ padding: 2rem 0rem 1rem;
  display: flex;
  align-items: center;
  justify-content: space-between;
@@ -24,6 +30,31 @@ body{
 
 .cus-pro{
   cursor: pointer;
+}
+
+.menu-pro{
+  max-width: 500px;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  background-color: #ffffff;
+  border-radius: 0px 0px 5px 5px;
+  padding: 1rem 1.5rem;
+}
+
+ul.menu-list li{
+  list-style: none;
+  text-align: center;
+  padding: 0.8rem 0rem;
+  cursor: pointer;
+}
+ul.menu-list li:hover{
+  background-color: #f1f8f8;
+  border-radius: 5px;
+}
+
+.profile-name{
+  padding: 0.2rem 0rem;
 }
 
 .merchant-name{
@@ -85,9 +116,10 @@ body{
   max-width: 200px;
   width: 100%;
   padding: 0.5rem;
-  background-color: #333;
-  color: #03E0CA;
+  background-color: #121212;
+  color: #d50001;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }

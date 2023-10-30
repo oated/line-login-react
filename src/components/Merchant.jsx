@@ -16,6 +16,11 @@ function Merchant() {
     const [userId, setUserId] = useState("");
     const [response, setResponse] = useState("");
     const destinationUrl = window.location.href;
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+      
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
 
     const logout = () => {
         liff.logout();
@@ -65,9 +70,9 @@ function Merchant() {
             });
     }
 
-    useEffect(() => {
-        initLine();
-    }, []);
+    // useEffect(() => {
+    //     initLine();
+    // }, []);
 
     return (
         <div className="merchant">
@@ -77,11 +82,29 @@ function Merchant() {
                         <img src={tunqlogo} alt="TunQ Logo"/>
                     </div>
                     <div className="cus-pro">
-                    <img src={pictureUrl} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
+                        <img src={pictureUrl} onClick={toggleMenu} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
                     </div>
                 </div>
+                {isMenuOpen && (
+        <div className="menu-pro">
+            <ul className='menu-list'>
+                <li>
+                    <p>{displayName}</p>
+                </li>
+                <li>
+                    <p>เช็คสถานะคิว</p>
+                </li>
+                <li>
+                    <p>เช็คคะแนน</p>
+                </li>
+            </ul>
+            <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
+        </div>
+      )}
                 <div className='box-action'>
-                    <div className='merchant-name'><h2>{merchantName}</h2></div>
+                    <div className='merchant-name'>
+                        <h2>{merchantName}</h2>
+                    </div>
                     <div className="date-time">
                         <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
                     </div>
@@ -89,7 +112,6 @@ function Merchant() {
                         <span className='take-queue' onClick={sendRequestToAPI}>รับคิว</span>
                     </div>
                     <br />
-                    <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
                     <p>{response}</p>
                 </div>
             </header>
