@@ -4,6 +4,8 @@ import liff from '@line/liff';
 import viteLogo from '/vite.svg';
 import profilepic from '/profile-pic.png';
 import tunqlogo from '/TunQ-logo.png'
+import moment from 'moment-timezone';
+import { useLocation } from 'react-router-dom';
 
 function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
@@ -17,6 +19,7 @@ function Merchant() {
     const [response, setResponse] = useState("");
     const destinationUrl = window.location.href;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const thaiTimeZone = 'Asia/Bangkok';
       
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
@@ -70,9 +73,11 @@ function Merchant() {
             });
     }
 
-    useEffect(() => {
-        initLine();
-    }, []);
+    const thaiDateTime = moment.tz(thaiTimeZone).format('D MMMM YYYY h:mm:ss a');
+
+    // useEffect(() => {
+    //     initLine();
+    // }, []);
 
     return (
         <div className="merchant">
@@ -106,7 +111,7 @@ function Merchant() {
                         <h2>{merchantName}</h2>
                     </div>
                     <div className="date-time">
-                        <span>30 ตุลาคม 2566 เวลา 22.30 น.</span>
+                        <span>กด <span className='text-hilight'><b>รับคิว</b></span> เพื่อใช้บริการระบบคิวออนไลน์</span>
                     </div>
                     
                     <div className="ellipse">
@@ -115,6 +120,10 @@ function Merchant() {
                     </div>
                     <br />
                     <p>{response}</p>
+                </div>
+                <div className="advertize">
+                    <img src="/Coke-ads.jpeg" alt="Coke ads" />
+                    <span className='ads-text'>ได้รับการสนับสนุนจาก <b>Coca Cola</b></span>
                 </div>
             </header>
         </div>

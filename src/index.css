@@ -122,6 +122,25 @@ ul.menu-list li:hover{
   }
 }
 
+.text-hilight{
+  color: #d50001;
+}
+
+.advertize{
+  max-width: 500px;
+  display: block;
+  margin: auto;
+  padding: 0rem 3rem;
+}
+.advertize img{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.ads-text{
+  font-size: 10px;
+}
+
 .take-queue{
   color: #FFF;
   text-align: center;
