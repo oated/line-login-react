@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, RouterProvider, Route, Link, createBrowserRouter } from 'react-router-dom'
-import About from './components/About.jsx'
 import Home from './components/Home.jsx'
 import Merchant from './components/Merchant.jsx'
+import Profile from './components/Profile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,12 +12,12 @@ const router = createBrowserRouter([
     element: <Home />
   },
   {
-    path: ":merchantId",
+    path: "merchant",
     element: <Merchant />
   },
   {
-    path: "about/",
-    element: <About />
+    path: "profile",
+    element: <Profile />
   }
 ])
 

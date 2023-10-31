@@ -77,31 +77,7 @@ function Merchant() {
 
     return (
         <div className="merchant">
-            <header className="header">
-                <div className="nav">
-                    <div className="logo-pro">
-                        <img src={tunqlogo} alt="TunQ Logo"/>
-                    </div>
-                    <div className="cus-pro">
-                        <img src={pictureUrl} onClick={toggleMenu} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
-                    </div>
-                </div>
-                {isMenuOpen && (
-        <div className="menu-pro">
-            <ul className='menu-list'>
-                <li>
-                    <p>{displayName}</p>
-                </li>
-                <li>
-                    <p>เช็คสถานะคิว</p>
-                </li>
-                <li>
-                    <p>เช็คคะแนน</p>
-                </li>
-            </ul>
-            <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
-        </div>
-      )}
+            <Header />
                 <div className='box-action'>
                     <div className='merchant-name'>
                         <h2>{merchantName}</h2>
@@ -121,7 +97,6 @@ function Merchant() {
                     <img src={ads} alt="Coke ads" />
                     <span className='ads-text'>ได้รับการสนับสนุนจาก <b>Coca Cola</b></span>
                 </div>
-            </header>
         </div>
     );
 }
