@@ -9,6 +9,8 @@ function Header() {
     const [pictureUrl, setPictureUrl] = useState(profilepic);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [displayName, setDisplayName] = useState("");
+    const queryParams = new URLSearchParams(window.location.search);
+    const destinationUrl = window.location.href;
 
     const initLine = () => {
         liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
