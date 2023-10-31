@@ -65,9 +65,9 @@ function Profile() {
               });
       }
   
-    //   useEffect(() => {
-    //       initLine();
-    //   }, []);
+      useEffect(() => {
+          initLine();
+      }, []);
 
   return (
     <>
