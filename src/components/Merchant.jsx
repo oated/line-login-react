@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import liff from '@line/liff';
+import profilepic from '/profile-pic.png';
+import tunqlogo from '/TunQ-logo.png'
 import ads from '/Coke-ads.jpeg'
-import Header from './Header';
 
 
 function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
     const merchantId = queryParams.get("id");
     const merchantName = queryParams.get("name");
+    const [idToken, setIdToken] = useState("");
+    const [pictureUrl, setPictureUrl] = useState(profilepic);
+    const [displayName, setDisplayName] = useState("");
+    const [statusMessage, setStatusMessage] = useState("");
     const [userId, setUserId] = useState("");
     const [response, setResponse] = useState("");
     const destinationUrl = window.location.href;
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+      
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+
+    const logout = () => {
+        liff.logout();
+        window.location.reload();
+    }
 
     const initLine = () => {
         liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
@@ -61,9 +76,33 @@ function Merchant() {
     }, []);
 
     return (
-        <>
-        <Header />
         <div className="merchant">
+            <header className="header">
+                <div className="nav">
+                    <div className="logo-pro">
+                        <img src={tunqlogo} alt="TunQ Logo"/>
+                    </div>
+                    <div className="cus-pro">
+                        <img src={pictureUrl} onClick={toggleMenu} width="40px" height="40px" style={{ borderRadius: "100%" }} alt="Merchant Image" />
+                    </div>
+                </div>
+                {isMenuOpen && (
+        <div className="menu-pro">
+            <ul className='menu-list'>
+                <li>
+                    <p>{displayName}</p>
+                </li>
+                <li>
+                    <p>เช็คสถานะคิว</p>
+                </li>
+                <li>
+                    <p>เช็คคะแนน</p>
+                </li>
+            </ul>
+            <button className='logout-btn' onClick={logout}>ออกจากระบบ</button>
+        </div>
+      )}
+            </header>
                 <div className='box-action'>
                     <div className='merchant-name'>
                         <h2>{merchantName}</h2>
@@ -84,7 +123,6 @@ function Merchant() {
                     <span className='ads-text'>ได้รับการสนับสนุนจาก <b>Coca Cola</b></span>
                 </div>
         </div>
-        </>
     );
 }
 
