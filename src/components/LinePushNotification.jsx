@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import cors from 'cors';
 
 function LinePushNotification() {
   const [notificationSent, setNotificationSent] = useState(false);
-  const cors = require("cors");
-  app.use(cors());
 
   const pushNotification = async () => {
     try {
