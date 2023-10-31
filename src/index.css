@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif!important;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Prompt', sans-serif!important;
 }
 body{
   background-color: #F1F8F8;
