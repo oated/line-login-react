@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import liff from '@line/liff';
-import viteLogo from '/vite.svg';
 import profilepic from '/profile-pic.png';
 import tunqlogo from '/TunQ-logo.png'
 import moment from 'moment-timezone';
-import { useLocation } from 'react-router-dom';
+import ads from 'Coke-ads.jpeg'
+
 
 function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
@@ -122,7 +122,7 @@ function Merchant() {
                     <p>{response}</p>
                 </div>
                 <div className="advertize">
-                    <img src="/Coke-ads.jpeg" alt="Coke ads" />
+                    <img src={ads} alt="Coke ads" />
                     <span className='ads-text'>ได้รับการสนับสนุนจาก <b>Coca Cola</b></span>
                 </div>
             </header>
