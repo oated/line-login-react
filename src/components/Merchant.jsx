@@ -75,9 +75,9 @@ function Merchant() {
 
     const thaiDateTime = moment.tz(thaiTimeZone).format('D MMMM YYYY h:mm:ss a');
 
-    // useEffect(() => {
-    //     initLine();
-    // }, []);
+    useEffect(() => {
+        initLine();
+    }, []);
 
     return (
         <div className="merchant">
