@@ -19,6 +19,17 @@ function Header() {
             }
         }, err => console.error(err));
     }
+    const runApp = () => {
+        const idToken = liff.getIDToken();
+        setIdToken(idToken);
+        liff.getProfile().then(profile => {
+            console.log(profile);
+            setDisplayName(profile.displayName);
+            setPictureUrl(profile.pictureUrl);
+            setStatusMessage(profile.statusMessage);
+            setUserId(profile.userId);
+        }).catch(err => console.error(err));
+    }
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
