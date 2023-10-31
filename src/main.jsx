@@ -5,7 +5,7 @@ import { BrowserRouter, RouterProvider, Route, Link, createBrowserRouter } from 
 import Home from './components/Home.jsx'
 import Merchant from './components/Merchant.jsx'
 import Profile from './components/Profile.jsx'
-import LinePush from './components/LinePush'
+import LinePushNotification from './components/LinePushNotification'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "linepush",
-    element: <LinePush />
+    element: <LinePushNotification />
   }
 ])
 
