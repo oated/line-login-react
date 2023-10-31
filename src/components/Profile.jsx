@@ -44,27 +44,6 @@ function Profile() {
           }).catch(err => console.error(err));
       }
   
-      const sendRequestToAPI = () => {
-          const data = JSON.stringify({
-              "market_id": merchantId,
-              "line_token": userId
-            });
-  
-          axios.post('http://188.166.177.184:3001/bot/add_token_user', data, {
-              headers: {
-                  'Content-Type': 'application/json',
-              }
-          })
-              .then(response => {
-                  setResponse(JSON.stringify(response.data));
-                  console.log(data);
-              })
-              .catch(error => {
-                  console.log(data);
-                  console.error(error);
-              });
-      }
-  
       useEffect(() => {
           initLine();
       }, []);

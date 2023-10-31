@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import liff from '@line/liff';
-import profilepic from '/profile-pic.png';
-import tunqlogo from '/TunQ-logo.png'
 import ads from '/Coke-ads.jpeg'
 
 
@@ -10,23 +8,9 @@ function Merchant() {
     const queryParams = new URLSearchParams(window.location.search);
     const merchantId = queryParams.get("id");
     const merchantName = queryParams.get("name");
-    const [idToken, setIdToken] = useState("");
-    const [pictureUrl, setPictureUrl] = useState(profilepic);
-    const [displayName, setDisplayName] = useState("");
-    const [statusMessage, setStatusMessage] = useState("");
     const [userId, setUserId] = useState("");
     const [response, setResponse] = useState("");
     const destinationUrl = window.location.href;
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-      
-    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-    };
-
-    const logout = () => {
-        liff.logout();
-        window.location.reload();
-    }
 
     const initLine = () => {
         liff.init({ liffId: '2001346006-R6d1wj3Q' }, () => {
