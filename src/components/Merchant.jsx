@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import liff from '@line/liff';
 import ads from '/Coke-ads.jpeg'
+import Header from './Header';
 
 
 function Merchant() {
@@ -60,8 +61,9 @@ function Merchant() {
     }, []);
 
     return (
+        <>
+        <Header />
         <div className="merchant">
-            <Header />
                 <div className='box-action'>
                     <div className='merchant-name'>
                         <h2>{merchantName}</h2>
@@ -82,6 +84,7 @@ function Merchant() {
                     <span className='ads-text'>ได้รับการสนับสนุนจาก <b>Coca Cola</b></span>
                 </div>
         </div>
+        </>
     );
 }
 
