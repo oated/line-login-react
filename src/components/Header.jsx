@@ -18,6 +18,9 @@ function Header() {
         liff.logout();
         window.location.reload();
     }
+    useEffect(() => {
+        initLine();
+    }, []);
     
   return (
     <div>
