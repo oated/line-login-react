@@ -3,8 +3,7 @@ import axios from 'axios';
 import liff from '@line/liff';
 import profilepic from '/profile-pic.png';
 import tunqlogo from '/TunQ-logo.png'
-import moment from 'moment-timezone';
-import ads from 'Coke-ads.jpeg'
+import ads from '/Coke-ads.jpeg'
 
 
 function Merchant() {
@@ -19,7 +18,6 @@ function Merchant() {
     const [response, setResponse] = useState("");
     const destinationUrl = window.location.href;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const thaiTimeZone = 'Asia/Bangkok';
       
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
@@ -72,8 +70,6 @@ function Merchant() {
                 console.error(error);
             });
     }
-
-    const thaiDateTime = moment.tz(thaiTimeZone).format('D MMMM YYYY h:mm:ss a');
 
     useEffect(() => {
         initLine();
